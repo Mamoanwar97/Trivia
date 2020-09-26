@@ -114,92 +114,110 @@ The error codes currently returned are:
 
 ```json
         {
-    "categories": {
-        "1": "Science",
-        "2": "Art",
-        "3": "Geography",
-        "4": "History",
-        "5": "Entertainment",
-        "6": "Sports"
-    },
-    "questions": [
-        {
-            "answer": "Tom Cruise",
-            "category": 5,
-            "difficulty": 4,
-            "id": 4,
-            "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
-        },
-        {
-            "answer": "Maya Angelou",
-            "category": 4,
-            "difficulty": 2,
-            "id": 5,
-            "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
-        },
-        {
-            "answer": "Edward Scissorhands",
-            "category": 5,
-            "difficulty": 3,
-            "id": 6,
-            "question": "What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"
-        },
-        {
-            "answer": "Muhammad Ali",
-            "category": 4,
-            "difficulty": 1,
-            "id": 9,
-            "question": "What boxer's original name is Cassius Clay?"
-        },
-        {
-            "answer": "Brazil",
-            "category": 6,
-            "difficulty": 3,
-            "id": 10,
-            "question": "Which is the only team to play in every soccer World Cup tournament?"
-        },
-        {
-            "answer": "Uruguay",
-            "category": 6,
-            "difficulty": 4,
-            "id": 11,
-            "question": "Which country won the first ever soccer World Cup in 1930?"
-        },
-        {
-            "answer": "George Washington Carver",
-            "category": 4,
-            "difficulty": 2,
-            "id": 12,
-            "question": "Who invented Peanut Butter?"
-        },
-        {
-            "answer": "Lake Victoria",
-            "category": 3,
-            "difficulty": 2,
-            "id": 13,
-            "question": "What is the largest lake in Africa?"
-        },
-        {
-            "answer": "The Palace of Versailles",
-            "category": 3,
-            "difficulty": 3,
-            "id": 14,
-            "question": "In which royal palace would you find the Hall of Mirrors?"
-        },
-        {
-            "answer": "Agra",
-            "category": 3,
-            "difficulty": 2,
-            "id": 15,
-            "question": "The Taj Mahal is located in which Indian city?"
-        }
-    ],
-    "success": true,
-    "total_questions": 19
+  "categories": [
+    {
+      "id": 1, 
+      "type": "Science"
+    }, 
+    {
+      "id": 2, 
+      "type": "Art"
+    }, 
+    {
+      "id": 3, 
+      "type": "Geography"
+    }, 
+    {
+      "id": 4, 
+      "type": "History"
+    }, 
+    {
+      "id": 5, 
+      "type": "Entertainment"
+    }, 
+    {
+      "id": 6, 
+      "type": "Sports"
+    }
+  ], 
+  "questions": [
+    {
+      "answer": "Tom Cruise", 
+      "category": 5, 
+      "difficulty": 4, 
+      "id": 4, 
+      "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
+    }, 
+    {
+      "answer": "Maya Angelou", 
+      "category": 4, 
+      "difficulty": 2, 
+      "id": 5, 
+      "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
+    }, 
+    {
+      "answer": "Edward Scissorhands", 
+      "category": 5, 
+      "difficulty": 3, 
+      "id": 6, 
+      "question": "What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"
+    }, 
+    {
+      "answer": "Muhammad Ali", 
+      "category": 4, 
+      "difficulty": 1, 
+      "id": 9, 
+      "question": "What boxer's original name is Cassius Clay?"
+    }, 
+    {
+      "answer": "Brazil", 
+      "category": 6, 
+      "difficulty": 3, 
+      "id": 10, 
+      "question": "Which is the only team to play in every soccer World Cup tournament?"
+    }, 
+    {
+      "answer": "Uruguay", 
+      "category": 6, 
+      "difficulty": 4, 
+      "id": 11, 
+      "question": "Which country won the first ever soccer World Cup in 1930?"
+    }, 
+    {
+      "answer": "George Washington Carver", 
+      "category": 4, 
+      "difficulty": 2, 
+      "id": 12, 
+      "question": "Who invented Peanut Butter?"
+    }, 
+    {
+      "answer": "Lake Victoria", 
+      "category": 3, 
+      "difficulty": 2, 
+      "id": 13, 
+      "question": "What is the largest lake in Africa?"
+    }, 
+    {
+      "answer": "The Palace of Versailles", 
+      "category": 3, 
+      "difficulty": 3, 
+      "id": 14, 
+      "question": "In which royal palace would you find the Hall of Mirrors?"
+    }, 
+    {
+      "answer": "Agra", 
+      "category": 3, 
+      "difficulty": 2, 
+      "id": 15, 
+      "question": "The Taj Mahal is located in which Indian city?"
+    }
+  ], 
+  "success": true, 
+  "total_questions": 20
 }
 ```
 
-#### DELETE /questions/<int:id\>
+#### DELETE /questions/<int:id>
 
 
 - General:
@@ -209,8 +227,7 @@ The error codes currently returned are:
 
 ```json
         {
-          "success": "True",
-          "message": "Question successfully deleted"
+          "success": "True"
         }
 ```
 
@@ -218,17 +235,17 @@ The error codes currently returned are:
 
 - General:
   - Creates a new question based on a payload.
+  - question, answer, category and difficulty are required
 
 - Sample: `curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d '{
-            "question": "Frankie Fredericks represented which African country in athletics?",
-            "answer": "Namibia",
-            "difficulty": 3,
+            "question": "Best Team in Egypt?",
+            "answer": "AL Ahly",
+            "difficulty": 4,
             "category": "6"
         }'`
 
 ```json
 {
-  "message": "Question successfully created!",
   "success": true
 }
 ```
@@ -260,36 +277,42 @@ The error codes currently returned are:
 
 - General:
   - Gets questions by category using the id from the url parameter.
-- Sample: `curl http://127.0.0.1:5000/categories/1/questions`<br>
+- Sample: `curl http://127.0.0.1:5000/categories/2/questions`<br>
 
 ```json
 {
-  "current_category": "Science",
   "questions": [
     {
-      "answer": "The Liver",
-      "category": 1,
-      "difficulty": 4,
-      "id": 20,
-      "question": "What is the heaviest organ in the human body?"
-    },
+      "answer": "Escher", 
+      "category": 2, 
+      "difficulty": 1, 
+      "id": 16, 
+      "question": "Which Dutch graphic artist\u2013initials M C was a creator of optical illusions?"
+    }, 
     {
-      "answer": "Alexander Fleming",
-      "category": 1,
-      "difficulty": 3,
-      "id": 21,
-      "question": "Who discovered penicillin?"
-    },
+      "answer": "Mona Lisa", 
+      "category": 2, 
+      "difficulty": 3, 
+      "id": 17, 
+      "question": "La Giaconda is better known as what?"
+    }, 
     {
-      "answer": "Blood",
-      "category": 1,
-      "difficulty": 4,
-      "id": 22,
-      "question": "Hematology is a branch of medicine involving the study of what?"
+      "answer": "One", 
+      "category": 2, 
+      "difficulty": 4, 
+      "id": 18, 
+      "question": "How many paintings did Van Gogh sell in his lifetime?"
+    }, 
+    {
+      "answer": "Jackson Pollock", 
+      "category": 2, 
+      "difficulty": 2, 
+      "id": 19, 
+      "question": "Which American artist was a pioneer of Abstract Expressionism, and a leading exponent of action painting?"
     }
-  ],
-  "success": true,
-  "total_questions": 3
+  ], 
+  "success": true, 
+  "total_questions": 4
 }
 
 ```
@@ -300,27 +323,22 @@ The error codes currently returned are:
   - Takes the category and previous questions in the request.
   - Return random question not in previous questions.
 
-- Sample: `curl http://127.0.0.1:5000/quizzes -X POST -H "Content-Type: application/json" -d '{"previous_questions": [5, 9],
-                                            "quiz_category": {"type": "History", "id": "4"}}'`
+- Sample: `curl http://127.0.0.1:5000/quizzes -X POST -H "Content-Type: application/json" -d '{"previous_questions": [17], "quiz_category": {"type": "Art", "id": "2"}}'`
 
 ```json
 {
   "question": {
-    "answer": "George Washington Carver",
-    "category": 4,
+    "answer": "Jackson Pollock",
+    "category": 2,
     "difficulty": 2,
-    "id": 12,
-    "question": "Who invented Peanut Butter?"
+    "id": 19,
+    "question": "Which American artist was a pioneer of Abstract Expressionism, and a leading exponent of action painting?"
   },
-  "success": true
+  "success": true,
+  "end": false
 }
 
 ```
-
-## Authors
-- Emmanuel Oluyale worked on the API and test suite to integrate with the frontend
-
-- Udacity provided the starter files for the project including the frontend
 
 ## Testing
 To run the tests, run
