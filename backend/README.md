@@ -273,7 +273,7 @@ The error codes currently returned are:
 }
 ```
 
-#### GET /categories/<int:id\>/questions
+#### GET /categories/<int:id>/questions
 
 - General:
   - Gets questions by category using the id from the url parameter.
